@@ -52,8 +52,8 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 
 RUN go get github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway && go get github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger && go get github.com/golang/protobuf/protoc-gen-go
 
-RUN wget https://github.com/protocolbuffers/protobuf/releases/download/v3.12.3/protoc-3.12.3-linux-x86_64.zip && unzip protoc-3.12.3-linux-x86_64.zip -d $HOME/.local
+RUN wget https://github.com/protocolbuffers/protobuf/releases/download/v3.12.3/protoc-3.12.3-linux-x86_64.zip && unzip protoc-3.12.3-linux-x86_64.zip -d /root/.local
 
-ENV PATH $PATH:$HOME/.local/bin/
+ENV PATH $PATH:/root/.local/bin/
 
 ENTRYPOINT /bin/bash
